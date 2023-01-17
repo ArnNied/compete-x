@@ -2,7 +2,7 @@
   <a
     :href="competition.url"
     target="_blank"
-    class="p-4 bg-white hover:bg-secondary rounded shadow-md group transition group"
+    class="p-4 bg-white hover:bg-secondary rounded shadow-md active:shadow-none outline-none transition group"
   >
     <div>
       <h3
@@ -28,20 +28,8 @@
         </span>
       </p>
       <p class="font-semibold text-darker group-hover:text-light transition">
-        Duration (hours):
-        <span class="font-normal">
-          {{
-            moment(competition.end_time)
-              .diff(competition.start_time, "hours", true)
-              .toFixed(1)
-          }}
-        </span>
-      </p>
-      <p class="font-semibold text-darker group-hover:text-light transition">
-        Status:
-        <span class="font-semibold text-primary transition">{{
-          competition.status == "CODING" ? "ONGOING" : "UPCOMING"
-        }}</span>
+        {{ moment(competition.start_time) < moment() ? "Ends " : "Starts " }}
+        {{ moment(competition.end_time).fromNow() }}
       </p>
     </div>
   </a>

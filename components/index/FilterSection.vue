@@ -11,6 +11,11 @@
           :click-handler="() => filterSiteHandler(site)"
           :filter-item="site"
           :chosen-filter="filterSite"
+          :amount="
+            listOfCompetitions.filter(
+              (competition) => competition.site === site
+            ).length
+          "
         />
       </div>
     </div>
@@ -18,11 +23,30 @@
       <h2 class="font-semibold text-2xl text-primary text-center">Status</h2>
       <div class="flex flex-row mt-2 space-x-4">
         <IndexFilterSectionButton
-          v-for="(status, index) in statuses"
-          :key="index"
-          :click-handler="() => filterStatusHandler(status)"
-          :filter-item="status"
+          display-text="Ongoing"
+          :click-handler="() => filterStatusHandler('CODING')"
+          filter-item="CODING"
           :chosen-filter="filterStatus"
+          :amount="
+            listOfCompetitions.filter(
+              (competition) =>
+                competition.status === 'CODING' &&
+                (filterSite === '' || competition.site === filterSite)
+            ).length
+          "
+        />
+        <IndexFilterSectionButton
+          display-text="Upcoming"
+          :click-handler="() => filterStatusHandler('BEFORE')"
+          filter-item="BEFORE"
+          :chosen-filter="filterStatus"
+          :amount="
+            listOfCompetitions.filter(
+              (competition) =>
+                competition.status === 'BEFORE' &&
+                (filterSite === '' || competition.site === filterSite)
+            ).length
+          "
         />
       </div>
     </div>
@@ -30,12 +54,15 @@
 </template>
 
 <script setup lang="ts">
+import { TCompetition } from "~~/typings/types"
+
 defineProps<{
   sites: string[]
   filterSite: string
   filterSiteHandler: (site: string) => void
-  statuses: string[]
   filterStatus: string
   filterStatusHandler: (status: string) => void
+  listOfCompetitions: TCompetition[]
+  filteredCompetitions: TCompetition[]
 }>()
 </script>

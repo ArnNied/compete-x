@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full grid grid-cols-4 gap-4 px-32">
+  <div class="w-full grid grid-cols-4 gap-4 px-32 pb-12">
     <IndexCompetitionCard
       v-for="competition in competitions"
       :competition="competition"
