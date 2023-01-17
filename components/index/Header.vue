@@ -11,8 +11,16 @@
         target="_blank"
         href="https://kontests.net"
         rel="noopener noreferrer"
-        class="text-secondary underline"
+        class="text-secondary hover:text-secondary/80 active:text-secondary/60 underline"
         >Kontest API</a
+      >
+      |
+      <a
+        target="_blank"
+        href="https://github.com/ArnNied/compete-x"
+        rel="noopener noreferrer"
+        class="text-secondary hover:text-secondary/80 active:text-secondary/60 underline"
+        >View site source code</a
       >
     </p>
   </div>
