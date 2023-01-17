@@ -2,6 +2,7 @@
   <div>
     <IndexHeader />
     <IndexFilterSection
+      v-if="listOfCompetitions.length > 0"
       :sites="sites"
       :filter-site="filterSite"
       :filter-site-handler="filterSiteHandler"
@@ -10,7 +11,12 @@
       :list-of-competitions="listOfCompetitions"
       :filtered-competitions="filteredCompetitions"
     />
-    <IndexCompetitionList :competitions="filteredCompetitions" />
+    <SkeletonFilterSection v-else />
+    <IndexCompetitionList
+      v-if="listOfCompetitions.length > 0"
+      :competitions="filteredCompetitions"
+    />
+    <SkeletonCompetitionList v-else />
   </div>
 </template>
 
@@ -20,10 +26,10 @@ import { TCompetition } from "~~/typings/types"
 const listOfCompetitions = ref<TCompetition[]>([])
 const filteredCompetitions = ref<TCompetition[]>([])
 
-const sites = ref(["Leet Code", "HackerRank", "CodeChef", "CodeForces"])
-const filterSite = ref("")
+const sites = ref<string[]>([])
+const filterSite = ref<string>("")
 
-const filterStatus = ref("")
+const filterStatus = ref<string>("")
 
 onMounted(async () => {
   try {
