@@ -55,7 +55,7 @@
         @keyup="(e) => filterTextHandler((e.target as HTMLInputElement).value as string)"
         type="text"
         placeholder="Search by name"
-        class="py-2 px-4 text-darker rounded-full shadow focus:outline-none"
+        class="py-2 px-4 text-darker rounded-full shadow focus:shadow-primary/50 focus:outline-none transition"
       />
     </div>
   </div>

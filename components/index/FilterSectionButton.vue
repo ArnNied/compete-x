@@ -1,10 +1,10 @@
 <template>
   <button
     @click="clickHandler"
-    class="px-4 py-2 rounded-full transition outline-none"
+    class="px-4 py-2 rounded-full shadow active:shadow-none transition outline-none"
     :class="{
-      'bg-secondary text-light shadow-none': chosenFilter === filterItem,
-      'bg-white text-darker shadow': chosenFilter !== filterItem,
+      'bg-secondary text-light shadow-primary/50': chosenFilter === filterItem,
+      'bg-white text-darker': chosenFilter !== filterItem,
     }"
   >
     {{ displayText || filterItem }}
