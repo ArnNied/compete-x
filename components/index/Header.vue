@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-primary py-12">
+  <div class="bg-primary px-4 py-12">
     <h1 class="font-bold text-6xl text-light text-center">CompeteX</h1>
     <p class="mt-4 text-light text-center">
       Find Your Next Challenge: Explore Online Competitions From Popular
