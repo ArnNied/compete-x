@@ -18,6 +18,7 @@
       :competitions="filteredCompetitions"
     />
     <SkeletonCompetitionList v-else />
+    <SharedBackToTopButton />
   </div>
 </template>
 
