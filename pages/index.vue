@@ -10,6 +10,7 @@
       :filter-status-handler="filterStatusHandler"
       :list-of-competitions="listOfCompetitions"
       :filtered-competitions="filteredCompetitions"
+      :filter-text-handler="filterTextHandler"
     />
     <SkeletonFilterSection v-else />
     <IndexCompetitionList
@@ -28,8 +29,8 @@ const filteredCompetitions = ref<TCompetition[]>([])
 
 const sites = ref<string[]>([])
 const filterSite = ref<string>("")
-
 const filterStatus = ref<string>("")
+const filterName = ref<string>("")
 
 onMounted(async () => {
   try {
@@ -67,10 +68,20 @@ function filterStatusHandler(status: string): void {
   filterCompetitons()
 }
 
+function filterTextHandler(text: string): void {
+  filterName.value = text || ""
+
+  filterCompetitons()
+}
+
 // Filter competitions based on site and status
-function filterCompetitons() {
+function filterCompetitons(): void {
   filteredCompetitions.value = listOfCompetitions.value.filter(
     (competition) =>
+      (filterName.value === "" ||
+        competition.name
+          .toLowerCase()
+          .includes(filterName.value.toLowerCase())) &&
       (filterSite.value === "" || competition.site === filterSite.value) &&
       (filterStatus.value === "" || competition.status === filterStatus.value)
   )

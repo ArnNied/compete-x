@@ -1,6 +1,6 @@
 <template>
   <div class="py-6">
-    <div class="w-fit mx-auto">
+    <div class="w-fit px-8 mx-auto">
       <h2 class="font-semibold text-2xl text-primary text-center">
         Filter Site
       </h2>
@@ -50,6 +50,14 @@
         />
       </div>
     </div>
+    <div class="w-full px-32 mt-4">
+      <input
+        @keyup="(e) => filterTextHandler((e.target as HTMLInputElement).value as string)"
+        type="text"
+        placeholder="Search by name"
+        class="py-2 px-4 text-darker rounded-full shadow focus:outline-none"
+      />
+    </div>
   </div>
 </template>
 
@@ -62,6 +70,7 @@ defineProps<{
   filterSiteHandler: (site: string) => void
   filterStatus: string
   filterStatusHandler: (status: string) => void
+  filterTextHandler: (text: string) => void
   listOfCompetitions: TCompetition[]
   filteredCompetitions: TCompetition[]
 }>()

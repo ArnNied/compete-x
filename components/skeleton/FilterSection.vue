@@ -19,5 +19,10 @@
         <SkeletonFilterSectionButton />
       </div>
     </div>
+    <div class="w-full px-32 mt-4">
+      <div
+        class="w-60 h-10 bg-white rounded-full shadow focus:outline-none"
+      ></div>
+    </div>
   </div>
 </template>
