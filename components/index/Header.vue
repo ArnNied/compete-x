@@ -12,7 +12,7 @@
         href="https://kontests.net"
         rel="noopener noreferrer"
         class="text-secondary hover:text-secondary/80 active:text-secondary/60 underline"
-        >Kontest API</a
+        >KONTESTS API</a
       >
       |
       <a

@@ -38,41 +38,52 @@ export default defineNuxtConfig({
       ],
       meta: [
         {
-          hid: "description",
+          key: "description",
           name: "description",
           content:
             "Find Your Next Challenge: Explore Online Competitions From Popular Platforms",
         },
         {
-          hid: "og:title",
+          key: "og:title",
           property: "og:title",
           content: "CompeteX",
         },
         {
-          hid: "og:description",
+          key: "og:description",
           property: "og:description",
           content:
             "Find Your Next Challenge: Explore Online Competitions From Popular Platforms",
         },
         {
-          hid: "og:image",
+          key: "og:image",
           property: "og:image",
           content: "/icon/android-chrome-512x512.png",
         },
         {
-          hid: "og:url",
+          key: "og:url",
           property: "og:url",
           content: "https://competex.vercel.app/",
         },
         {
-          hid: "og:site_name",
+          key: "og:site_name",
           property: "og:site_name",
           content: "CompeteX",
         },
         {
-          hid: "og:type",
+          key: "og:type",
           property: "og:type",
           content: "website",
+        },
+        {
+          key: "author",
+          name: "author",
+          content: "Andrien Wiandyano",
+        },
+        {
+          key: "keywords",
+          name: "keywords",
+          content:
+            "Competitive Programming, Online Competition, Programming, Coding, CompeteX, List, List of Competitive Programming, Powered by KONTESTS",
         },
       ],
     },
