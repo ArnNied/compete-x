@@ -62,7 +62,7 @@ export default defineNuxtConfig({
         {
           key: "og:url",
           property: "og:url",
-          content: "https://competex.vercel.app/",
+          content: "https://compete-x.vercel.app/",
         },
         {
           key: "og:site_name",
