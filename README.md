@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# CompeteX
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Find Your Next Challenge: Explore Online Competitions From Popular Platforms. Powered by KONTESTS API. View demo [here](https://compete-x.vercel.app/).
 
 ## Setup
 
